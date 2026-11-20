@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"time"
 
 	"testbot/arena"
 )
@@ -11,6 +12,8 @@ import (
 var dirs = []arena.Direction{arena.E, arena.SE, arena.SW, arena.W, arena.NW, arena.NE}
 
 func think(state *arena.GameState, player int) []arena.Order {
+	// Pretend to compute something: 20 to 60 ms per turn
+	time.Sleep(time.Duration(20+rand.Intn(40)) * time.Millisecond)
 
 	var orders []arena.Order
 
